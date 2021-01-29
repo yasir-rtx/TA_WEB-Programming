@@ -1,3 +1,4 @@
 <a href="?p=gejala">GEJALA</a><br>
 <a href="?p=question">QUESTION</a><br>
-<a href="?p=penyakit">PENYAKIT</a>
+<a href="?p=penyakit">PENYAKIT</a><br>
+<a href="?p=rule">RULE</a>

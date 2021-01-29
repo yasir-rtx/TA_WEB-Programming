@@ -1,5 +1,5 @@
 <form name="" method="post" action="" enctype="multipart/form-data">
-    <input type="text" name="code" placeholder="Kode Pertanyaan">
+    <input type="text" name="code" placeholder="Kode Pertanyaan" autofocus>
     <textarea name="question" id="question"></textarea>
     <input type="submit" name="save" value="SAVE">
 </form>

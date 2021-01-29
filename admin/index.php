@@ -33,6 +33,14 @@
             include "penyakitedit.php";
         } elseif ($_GET["p"] == "penyakitdelete") {
             include "penyakitdelete.php";
+        } elseif ($_GET["p"] == "rule") {
+            include "rule.php";
+        } elseif ($_GET["p"] == "ruleadd") {
+            include "ruleadd.php";
+        } elseif ($_GET["p"] == "ruleedit") {
+            include "ruleedit.php";
+        } elseif ($_GET["p"] == "ruledelete") {
+            include "ruledelete.php";
         } else {
             include "home.php";
         }
