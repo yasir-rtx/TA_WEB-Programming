@@ -1,5 +1,2 @@
-<div class="main">
-    <div class="mainbar">
-        
-    </div>
-</div>
+<a href="?p=gejala">GEJALA</a><br>
+<a href="?p=question">QUESTION</a>

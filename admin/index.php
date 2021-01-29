@@ -13,6 +13,18 @@
             include "question.php";
         } elseif ($_GET["p"] == "questionadd") {
             include "questionadd.php";
+        } elseif ($_GET["p"] == "questionedit") {
+            include "questionedit.php";
+        } elseif ($_GET["p"] == "questiondelete") {
+            include "questiondelete.php";
+        } elseif ($_GET["p"] == "gejala") {
+            include "gejala.php";
+        } elseif ($_GET["p"] == "gejalaadd") {
+            include "gejalaadd.php";
+        } elseif ($_GET["p"] == "gejalaedit") {
+            include "gejalaedit.php";
+        } elseif ($_GET["p"] == "gejaladelete") {
+            include "gejaladelete.php";
         } else {
             include "home.php";
         }
