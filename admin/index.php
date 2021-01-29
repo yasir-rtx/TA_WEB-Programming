@@ -25,6 +25,14 @@
             include "gejalaedit.php";
         } elseif ($_GET["p"] == "gejaladelete") {
             include "gejaladelete.php";
+        } elseif ($_GET["p"] == "penyakit") {
+            include "penyakit.php";
+        } elseif ($_GET["p"] == "penyakitadd") {
+            include "penyakitadd.php";
+        } elseif ($_GET["p"] == "penyakitedit") {
+            include "penyakitedit.php";
+        } elseif ($_GET["p"] == "penyakitdelete") {
+            include "penyakitdelete.php";
         } else {
             include "home.php";
         }

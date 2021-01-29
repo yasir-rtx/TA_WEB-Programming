@@ -42,7 +42,7 @@
                         alert('INCOMPLETE DATA');
                     </script>
                     <META HTTP-EQUIV='Refresh' Content='0; URL=?p=gejalaedit'>
-                ";
+            ";
         }
     }
 ?>

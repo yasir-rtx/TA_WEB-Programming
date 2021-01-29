@@ -20,7 +20,7 @@
             <td><?php echo "$rq[question]"; ?></td>
             <td>
                 <a href="?p=questionedit&idq=<?php echo "$rq[id_quest]"; ?>">EDIT</a>
-                <a href="?p=questiondeleteidq=<?php echo "$rq[id_quest]"; ?>">DELETE</a>
+                <a href="?p=questiondeleteidq=<?php echo "$rq[id_quest]"; ?>" onclick="return confirm('ARE YOU SURE YOU WANT TO DELETE THIS DATA?');">DELETE</a>
             </td>
         </tr>
     <?php $no++; ?>
