@@ -1,0 +1,154 @@
+.card {
+	margin: 50px auto;
+	min-height: 230px;
+	border: thin;
+	box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+	padding-bottom: 10px;
+	width: 50%;
+}
+
+.cardhead {
+	padding: 10px;
+	background-color: #0d2329;
+	color:rgb(137, 233, 148);
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 20px;
+	text-align: center;
+}
+
+.cardbody {
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: #fff;
+	color: #005555;
+	min-height: 185px;
+	font-size: 14px;
+	text-align: center;
+}
+
+.cardfoot {
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: #FFF;
+	color: #005555;
+	text-align: right;
+	min-height: 50px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="file"],
+input[type="date"],
+select,
+textarea {
+	width: 90%;
+	padding: 0.8em;
+	margin-top: 1em;
+	border: 1px solid #0d2329;
+	background-color: rgb(137, 233, 148);
+	font-family: Cambria;
+	font-size: 14px;
+	color: #005555;
+	text-align: center;
+	border-radius: 5px;
+}
+
+.radio {
+	margin-top: 1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*CSS RESET*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*Micro Fix*/
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}

@@ -7,11 +7,11 @@
     <title>MUSQUITO EXPERT SYSTEM</title>
 </head>
 <body>
-    <div class="header">
+    <div class="header cf">
         <div class="grid">
             <div class="topnav" id="myTopnav">
                 <div class="">
-                    <a href="index.php">epwm OnlineShop</a>
+                    <a href="index.php">M.E.S</a>
                     <a href="javascript:void(0);" class="icon" style="font-size:14px;" onClick="myFunction()">&#9776;</a>
                     <?php 
                         if ($_GET["p"] == "beranda") {
@@ -31,22 +31,34 @@
                             echo "<a href='?p=keranjangbelanja&idag=$rag[id_anggota]'>Keranjang Belanja</a>";
                             echo "<a href='?p=logout&idag=$rag[id_anggota]'>Logout</a>";
                         } else {
-                            echo "<a href='?p=register'>Register</a>";
-                            echo "<a href='?p=login'>Login</a>";
+                            echo "<a href='register.php'>Register</a>";
+                            echo "<a href='login.php'>Login</a>";
                         }
                     ?>
                 </div>
             </div>
         </div>
     </div>
+    
+    <div class="menu">
+        <a href="">DIAGNOSA</a>
+        <a href="">PENYAKIT</a>
+    </div>
 
-    <div class="main">
-
+    <div class="main cf">
+        <div class="opening">
+            <img src="img/nyamuk.jpeg" alt="" class="img cf">
+            <h1>Mosquito-borne disease Expert System</h1><br>
+            <p>M.E.S merupakan sistem pakar yang dikembangkan untuk mendiagnosa penyakit yang disebabkan oleh nyamuk. 
+                Dimana nyamuk sendiri menempati peringkat pertama sebagai hewan penyebab penyakit yang mematikan bagi manusia.
+                Ditambah lagi kemampuan hewan ini dalam beradaptasi dan berkembang biak sehinnga menjadi patut untuk diwaspadai.
+            </p>
+        </div>
     </div>
     
-    <div class="footer">
+    <div class="footer cf">
         <div class="grid">
-            copyright Muhammad Yasir &copy; 2021    
+            copyright Muhammad Yasir &copy; 2021
         </div>
     </div>
 </body>
