@@ -1,84 +1,50 @@
+<form name="" method="post" action="" enctype="multipart/form-data">
+    <!-- Menampung value question ke array $question -->
+    <?php 
+        include "connection.php";
+
+        $sql_question = mysqli_query($conn, "SELECT * FROM questions");
+        $jumlah_data_quest = mysqli_num_rows($sql_question);
+
+        $no=0; 
+        $question = array();
+        while ($rq = mysqli_fetch_array($sql_question)) {
+            // echo "$no "; var_dump($rq["question"]); echo "<br>";
+            $question[$no] = $rq["question"];
+            // echo "$question[$no]<br>";
+            $no++;
+        }
+    ?>
+
+    <!-- Menampilkan seluruh pertanyaan terkait gejala beserta form untuk menjawab -->
+    <?php for ($i=0; $i < $jumlah_data_quest; $i++) : ?>
+        <?php echo "$question[$i]"."<br>"; ?>
+        <?php $name = "CF".$i; ?>
+        <input type="radio" id="1" name="<?php echo "$name"; ?>" value="0.0">
+        <input type="radio" id="2" name="<?php echo "$name"; ?>" value="0.1">
+        <input type="radio" id="3" name="<?php echo "$name"; ?>" value="0.2">
+        <input type="radio" id="0" name="<?php echo "$name"; ?>" value="0.3">
+        <input type="radio" id="4" name="<?php echo "$name"; ?>" value="0.4">
+        <input type="radio" id="5" name="<?php echo "$name"; ?>" value="0.5">
+        <input type="radio" id="6" name="<?php echo "$name"; ?>" value="0.6">
+        <input type="radio" id="7" name="<?php echo "$name"; ?>" value="0.7">
+        <input type="radio" id="8" name="<?php echo "$name"; ?>" value="0.8">
+        <input type="radio" id="9" name="<?php echo "$name"; ?>" value="0.9">
+        <input type="radio" id="10" name="<?php echo "$name"; ?>" value="1.0">
+        <?php // $j = $i +1; echo "CF".$j; ?> <!-- debug -->
+        <?php echo "<br>"; ?>
+    <?php endfor; ?>
+    <input type="submit" name="diagnosa" value="DIAGNOSA">
+</form>
 
 <?php 
-include "connection.php";
-    // Menentukan nilai CF setiap rule berdasarkan tabel rule dan penyakit (rule/pasien_penyakit)
-        // $sql_rule = mysqli_query($conn, "SELECT * FROM rule");
-        // $jumlah_pasien_rule = mysqli_num_rows($sql_rule); // Menghitung jumlah data dalam table rule
-        // $pasien_rule = array(); // Menyediakan array kosong untuk menampung value pasien dari table rule
-        // // Proses pemindahan value pasien ke array
-        // for ($i=0; $i < $jumlah_pasien_rule; $i++) { 
-        //     $rr = mysqli_fetch_array($sql_rule);
-        //     $pasien_rule[$i] = $rr["pasien"];
-        //     // echo "$pasien_rule[$i]<br>"; //Debug value pasien
-        // }
-        // // var_dump($pasien_rule); echo "<br>"; // debug array pasien_rule
-        
-
-        // $sql_penyakit = mysqli_query($conn, "SELECT * FROM penyakit");
-        // $jumlah_pasien_penyakit = mysqli_num_rows($sql_penyakit);
-        // $pasien_penyakit = array();
-        // for ($i=0; $i < $jumlah_pasien_penyakit; $i++) { 
-        //     $rp = mysqli_fetch_array($sql_penyakit);
-        //     $pasien_penyakit[$i] = $rp["pasien"];
-        //     // echo "$pasien_penyakit[$i]<br>"; // Debug
-        // }
-        // // var_dump($pasien_penyakit); echo "<br>"; // debug array pasien_penyakit
-
-        // // Inisiasi Proses pencarian CF
-        // $CF = array();
-        // // for ($i=0; $i < $jumlah_pasien_rule; $i++) { 
-        // //     $rr = mysqli_fetch_array($sql_rule);
-        // //     // var_dump($pasien_rule[$i]);echo "<br>"; // Debug
-
-        // //     for ($j=0; $j < $jumlah_pasien_penyakit; $j++) { 
-        // //         $rp = mysqli_fetch_array($sql_penyakit);
-        // //         var_dump($pasien_penyakit[$j]);echo "<br>";
-
-        // //         if ($rr["id_penyakit"] == $rp["id_penyakit"]) {
-        // //             $CF[$j] = $rr["pasien"] / $rp["pasien"];
-        // //         }
-
-        // //     }
-
-        // //     echo "<br>";
-        // //     // var_dump($CF[$j]);echo "<br>"; //debug
-        // // }
-
-        $CF = array();
-        $sql_rule = mysqli_query($conn, "SELECT * FROM rule");
-        $sql_penyakit = mysqli_query($conn, "SELECT * FROM penyakit");
-        $jumlah_pasien_rule = mysqli_num_rows($sql_rule);
-        $jumlah_pasien_penyakit = mysqli_num_rows($sql_penyakit);
-        
-        
-        $pasien_penyakit = array();
-        for ($j=0; $j < $jumlah_pasien_penyakit; $j++) { 
-            $rp = mysqli_fetch_array($sql_penyakit);
-            $pasien_rule[$j] = $rp["pasien"];
-            // echo "$pasien_rule[$j]<br>"; // debug
+    /* Menampung nilai CF dari user ke array $CF_user */
+    if (isset($_POST["diagnosa"])) {
+        $CF_user = array();
+        for ($i=0; $i < $jumlah_data_quest; $i++) { 
+            $CF_user[$i] = $_POST["CF".$i];
+            $j = $i +1;
+            // echo "$CF_user[$i]"." CF".$j."<br>";
         }
-
-        for ($i=0; $i < $jumlah_pasien_rule; $i++) { 
-            $rr = mysqli_fetch_array($sql_rule);
-            $rp = mysqli_fetch_array($sql_penyakit);
-            
-            
-
-            if ($rr["id_penyakit"] == 1) {
-                // var_dump($rr["id_penyakit"]);echo "<br>"; // debug
-                $CF[$i] = $rr["pasien"] / $rp["pasien"];
-                echo "$CF[$i]<br>";
-            }
-
-            // if ($rr["id_penyakit"] == 2) {
-            //     // var_dump($rr["id_penyakit"]);echo "<br>"; // debug
-
-            // }
-            // if ($rr["id_penyakit"] == 3) {
-            //     // var_dump($rr["id_penyakit"]);echo "<br>"; // debug
-
-            // }
-        }
-
-    // Rule
+    }
 ?>
