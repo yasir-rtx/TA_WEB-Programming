@@ -164,6 +164,10 @@ body {
 	}
 }
 
+.question {
+	background-color: #fff;
+}
+
 .dh1 {width: 8.33%;}
 .dh2 {width: 16.66%;}
 .dh3 {width: 24.99%;}
