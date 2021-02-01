@@ -1,4 +1,5 @@
 <?php 
+    error_reporting (E_ALL ^ E_NOTICE); 
     session_start();
     if (isset($_SESSION["login"])) {
         header("Location: index.php");
@@ -73,7 +74,7 @@
                 <h3>USER</h3>
                 <p>Please login here...</p>
 
-                <input type="text" name="username" placeholder="Username...">
+                <input type="text" name="username" placeholder="Username..." autofocus>
                 <input type="password" name="password" placeholder="Password...">
                 <button type="submit" name="login">LOGIN</button>
 

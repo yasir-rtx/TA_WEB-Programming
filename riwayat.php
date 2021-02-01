@@ -1,19 +1,8 @@
 <?php 
     error_reporting (E_ALL ^ E_NOTICE); 
     session_start();
-    if (!isset($_SESSION["login"])) {
-        echo "
-            <script>
-                alert('YOU MUST LOG IN TO USE THIS FEATURE!!!');
-            </script>
-        ";
-        echo "<META HTTP-EQUIV='Refresh' Content='0; URL=login.php'>";
-        exit;
-    }
-
     include "connection.php";
-    $sql_user = mysqli_query($conn, "SELECT * FROM user WHERE username='$_SESSION[username]' && password='$_SESSION[password]'");
-    $result = mysqli_fetch_array($sql_user);
+    $id = $_GET["id"];
 ?>
 
 <!DOCTYPE html>
@@ -21,11 +10,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>M.E.S</title>
+    <link rel="stylesheet" href="stylehasil.css">
+    <title>Riwayat</title>
 </head>
 <body>
-    
     <div class="header">
         <div class="grid">
             <div class="topnav" id="myTopnav">
@@ -64,32 +52,45 @@
             </script>
         </div>
     </div>
+    
+    <div class="hasil">
+        <table>
+            <tr>
+                <th rowspan="2">NO</th>
+                <th rowspan="2">Tanggal dan Waktu</th>
+                <th colspan="3">Hasil</th>
+            </tr>
 
-    <div class="quest">
-    <?php 
-        include "konsultasi.php";
-        /* Menampung nilai CF dari user ke array $CF_user */
-        if (isset($_POST["diagnosa"])) {
-            $CF_user = array();
-            for ($i=0; $i < $jumlah_data_quest; $i++) {
-                $CF_user[$i] = $_POST["CF".$i];
-                $j = $i +1;
-                // echo "$CF_user[$i]"." CF".$j."<br>";
-            }
-            include "cf_process.php";
-            echo "<META HTTP-EQUIV='Refresh' Content='0; URL=hasil.php'>";
-        }
-    ?>
+            <tr>
+                <th>Deman berdarah</th>
+                <th>Malaria</th>
+                <th>Chikungunya</th>
+            </tr>
+                
+            <?php $no=1; ?>
+            <?php $sql_riwayat = mysqli_query($conn, "SELECT * FROM history WHERE id_anggota='$id' ORDER BY waktu DESC"); ?>
+            <?php while ($riwayat = mysqli_fetch_array($sql_riwayat)) : ?>
+                <tr>
+                    <th><?php echo "$no"; ?></th>
+                    <td><?php echo "$riwayat[waktu]"; ?></td>
+                    <td><?php echo "$riwayat[CF_P01]%"; ?></td>
+                    <td><?php echo "$riwayat[CF_P02]%"; ?></td>
+                    <td><?php echo "$riwayat[CF_P03]%"; ?></td>
+                </tr>
+                <?php $no++; ?>
+            <?php endwhile; ?>
 
+            <tr>
+                <th></th>
+            </tr>
+
+        </table>
     </div>
-
-    <div class="batas"></div>
 
     <div class="footer">
         <div class="grid">
             copyright Muhammad Yasir &copy; 2021
         </div>
     </div>
-
 </body>
 </html>

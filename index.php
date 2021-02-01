@@ -1,9 +1,6 @@
 <?php 
+    error_reporting (E_ALL ^ E_NOTICE); 
     session_start();
-
-    // var_dump($_SESSION["username"]);echo "<br>";
-    // var_dump($_SESSION["password"]);echo "<br>";
-
     include "connection.php";
     $sql_user = mysqli_query($conn, "SELECT * FROM user WHERE username='$_SESSION[username]' && password='$_SESSION[password]'");
     $result = mysqli_fetch_array($sql_user);
@@ -24,7 +21,7 @@
             <div class="topnav" id="myTopnav">
                 <div class="dh6">
                     <div class="left">
-                        <a href="index.php">M.E.S</a>
+                        <a href="index.php"><b>M.E.S</b></a>
                         <a href="javascript:void(0);" class="icon" style="font-size:14px;" onClick="myFunction()">&#9776;</a>
                         <a href="index.php">Beranda</a>
                         <a href="diagnosa.php">Diagnosa</a>
@@ -34,8 +31,8 @@
                     <div class="right">
                     <?php 
                         if (!empty($_SESSION["username"]) && !empty($_SESSION["password"])) {
-                            echo "<a><b>$result[name]</b></a>";
-                            echo "<a href='riwayat.php&id=$result[id_user]'>Riwayat</a>";
+                            echo "<a>Selamat datang &nbsp;&nbsp;&nbsp;<b>$result[name]</b></a>";
+                            echo "<a href='riwayat.php?id=$result[id_user]'>Riwayat</a>";
                             echo "<a href='logout.php'>Logout</a>";
                         } else {
                             echo "<a href='register.php'>Register</a>";

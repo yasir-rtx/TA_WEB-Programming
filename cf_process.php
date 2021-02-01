@@ -1,6 +1,5 @@
 <?php 
     include "connection.php";
-    include "konsultasi.php";
     /* Menentukan nilai CF setiap rule berdasarkan tabel rule dan penyakit (rule/pasien_penyakit) : */
         $sql_rule = mysqli_query($conn, "SELECT * FROM rule");
         $sql_penyakit = mysqli_query($conn, "SELECT * FROM penyakit");
@@ -12,7 +11,7 @@
         for ($j=0; $j < $jumlah_pasien_penyakit; $j++) { 
             $rp = mysqli_fetch_array($sql_penyakit);
             $pasien_rule[$j] = $rp["pasien"];
-            // echo "$pasien_rule[$j]<br>"; // debug
+            echo "$pasien_rule[$j]<br>"; // debug
         }
 
         // Menentukan nilai CF setiap rule
@@ -91,16 +90,14 @@
         
     /* Menggabungkan CF yang penyakitnya sama */
         /* CF P01 => CF01,CF02,CF03 : */
-            $CF_P01 = $CF01 + $CF02 * (1 - $CF01);
-            $CF_P01 = $CF_P01 + $CF03 * (1 - $CF_P01);
+            $CF_P01 = $CF03 + ($CF01 + $CF02 * (1 - $CF01)) * (1 - $CF03);
             $CF_P01 = round($CF_P01,4);
             // echo "$CF_P01<br>"; // debug
             $CF_P01 = $CF_P01 * 100;
             // echo "$CF_P01<br>"; // debug
 
         /* CF P02 => CF04,CF05,CF06 : */
-            $CF_P02 = $CF04 + $CF05 * (1- $CF04);
-            $CF_P02 = $CF_P02 + $CF06 * (1 - $CF_P02);
+            $CF_P02 = $CF06 + ($CF04 + $CF05 * (1- $CF04)) * (1 - $CF06);
             $CF_P02 = round($CF_P02,4);
             // echo "$CF_P02<br>"; // debug
             $CF_P02 = $CF_P02 * 100;
@@ -108,15 +105,13 @@
 
 
         /* CF P03 => CF07,CF08,CF09 : */
-            $CF_P03 = $CF7 + $CF8 * (1 - $CF7);
-            $CF_P03 = $CF_P03 + $CF9 * (1 - $CF_P03);
+            $CF_P03 = $CF09 + ($CF07 + $CF08 * (1 - $CF07)) * (1 - $CF09);
             $CF_P03 = round($CF_P03,4);
             // echo "$CF_P03<br>"; // debug
             $CF_P03 = $CF_P03 * 100;
             // echo "$CF_P03<br>"; // debug
-
     /* Menyimpan Hasil ke database */
-    $sql_history = mysqli_query($conn, "INSERT INTO history VALUES ('', '', NOW(), '$CF_P01', '$CF_P02', '$CF_P03')");
-
-    
+    $sql_user = mysqli_query($conn, "SELECT * FROM user WHERE username='$_SESSION[username]' && password='$_SESSION[password]'");
+    $result = mysqli_fetch_array($sql_user);
+    $sql_history = mysqli_query($conn, "INSERT INTO history VALUES ('', '$result[id_user]', NOW(), '$CF_P01', '$CF_P02', '$CF_P03')");
 ?>
