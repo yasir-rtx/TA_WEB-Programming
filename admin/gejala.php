@@ -1,11 +1,16 @@
 <?php include "connection.php"; ?>
-<a href="?p=gejalaadd">ADD</a>
+
+    <a href="?p=gejalaadd">
+        <div class="btn btn-add">
+            <p>TAMBAH DATA GEJALA</p>
+        </div>
+    </a>
+
 <table>
     <tr>
         <th>NO</th>
         <th>KODE</th>
         <th>GEJALA</th>
-        <th>PENYAKIT</th>
         <th>ACTION</th>
     </tr>
 
@@ -19,10 +24,9 @@
             <td><?php echo "$no"; ?></td>
             <td><?php echo "$rg[kode_gejala]"; ?></td>
             <td><?php echo "$rg[gejala]"; ?></td>
-            <td><?php echo "$rg[pasien]"; ?></td>
             <td>
                 <a href="?p=gejalaedit&idg=<?php echo "$rg[id_gejala]"; ?>">EDIT</a>
-                <a href="?p=gejaladeleteidg=<?php echo "$rg[id_gejala]"; ?>" onclick="return confirm('ARE YOU SURE YOU WANT TO DELETE THIS DATA?');">DELETE</a>
+                <a href="?p=gejaladelete&idg=<?php echo "$rg[id_gejala]"; ?>" onclick="return confirm('ARE YOU SURE YOU WANT TO DELETE THIS DATA?');">DELETE</a>
             </td>
         </tr>
     <?php $no++; ?>

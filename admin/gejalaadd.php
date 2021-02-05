@@ -1,8 +1,11 @@
-<form name="" method="post" action="" enctype="multipart/form-data">
-    <input type="text" name="code" placeholder="Kode Gejala...">
-    <textarea name="gejala" id="gejala"></textarea>
-    <input type="submit" name="save" value="SAVE">
-</form>
+<fieldset>
+    <form name="" method="post" action="" enctype="multipart/form-data">
+        <h1>TAMBAH GEJALA</h1>
+        <input type="text" name="code" placeholder="Kode Gejala...">
+        <textarea name="gejala" id="gejala"></textarea><br>
+        <input type="submit" name="save" value="SAVE">
+    </form>
+</fieldset>
 
 <?php 
     if ($_POST["save"]) {

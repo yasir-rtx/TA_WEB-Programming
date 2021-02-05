@@ -4,13 +4,16 @@
     $rp = mysqli_fetch_array($sql_penyakit);
 ?>
 
-<form name="" method="post" action="" enctype="multipart/form-data">
-    <input type="hidden" name="id" value="<?php echo "$rp[id_penyakit]"; ?>">
-    <input type="text" name="code" value="<?php echo "$rp[kode_penyakit]"; ?>">
-    <textarea name="penyakit" id="penyakit"><?php echo "$rp[penyakit]"; ?></textarea>
-    <input type="text" name="pasien" value="<?php echo "$rp[pasien]"; ?>">
-    <input type="submit" name="save" value="SAVE">
-</form>
+<fieldset>
+    <form name="" method="post" action="" enctype="multipart/form-data">
+    <h1>EDIT PENYAKIT</h1>
+        <input type="hidden" name="id" value="<?php echo "$rp[id_penyakit]"; ?>">
+        <input type="text" name="code" value="<?php echo "$rp[kode_penyakit]"; ?>">
+        <textarea name="penyakit" id="penyakit"><?php echo "$rp[penyakit]"; ?></textarea>
+        <input type="text" name="pasien" value="<?php echo "$rp[pasien]"; ?>"><br>
+        <input type="submit" name="save" value="SAVE">
+    </form>
+</fieldset>
 
 <?php 
     if ($_POST["save"]) {

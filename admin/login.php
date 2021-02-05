@@ -5,19 +5,18 @@
         header("Location: index.php");
         exit;
     }
-    
 
     if (isset($_POST["login"])) {
         include "connection.php";
-        $sql_user = mysqli_query($conn, "SELECT * FROM user WHERE username='$_POST[username]' AND password='$_POST[password]'");
-        $ru = mysqli_fetch_array($sql_user);
-        $row = mysqli_num_rows($sql_user);
+        $sql_admin = mysqli_query($conn, "SELECT * FROM admin WHERE username='$_POST[username]' AND password='$_POST[password]'");
+        $admin = mysqli_fetch_array($sql_admin);
+        $row = mysqli_num_rows($sql_admin);
         
         if ($row > 0) {
             session_start();
             $_SESSION["login"] = true;
-            $_SESSION["username"] = $ru["username"];
-            $_SESSION["password"] = $ru["password"];
+            $_SESSION["username"] = $admin["username"];
+            $_SESSION["password"] = $admin["password"];
             echo "
                 <script>
                     alert('YOU HAVE SUCCESSFULLY LOGGED IN');
@@ -45,13 +44,13 @@
 <body>
     <div id="signin">
         <fieldset>
-            <img src="img/accounts_user.png" alt="" width="120px">
+            <img src="../img/accounts_admin.png" alt="" width="120px">
             <form name="" method="post" action="" enctype="multipart/form-data">
-                <h3>USER</h3>
+                <h3>Administrator</h3>
                 <p>Please login here...</p>
 
-                <input type="text" name="username" placeholder="Username..." autofocus>
-                <input type="password" name="password" placeholder="Password...">
+                <input type="text" name="username" placeholder="Username..." autofocus maxlength="16">
+                <input type="password" name="password" placeholder="Password..." maxlength="16">
                 <button type="submit" name="login">LOGIN</button>
 
                 <?php if (isset($error)) : ?>

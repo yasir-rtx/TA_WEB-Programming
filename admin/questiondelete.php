@@ -1,5 +1,6 @@
 <?php 
-    $sql_question = mysqli_query($conn, "DELETE FROM questions WHERE id_question='$_GET[idq]'");
+    include "connection.php";
+    $sql_question = mysqli_query($conn, "DELETE FROM questions WHERE id_quest='$_GET[idq]'");
     if ($sql_question) {
         echo "
             <script>

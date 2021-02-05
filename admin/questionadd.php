@@ -1,8 +1,12 @@
-<form name="" method="post" action="" enctype="multipart/form-data">
-    <input type="text" name="code" placeholder="Kode Pertanyaan" autofocus>
-    <textarea name="question" id="question"></textarea>
-    <input type="submit" name="save" value="SAVE">
-</form>
+<fieldset>
+    <form name="" method="post" action="" enctype="multipart/form-data">
+    <h1>TAMBAH PERTANYAAN</h1>
+        <input type="text" name="code" placeholder="Kode Pertanyaan" autofocus>
+        <textarea name="question" id="question"></textarea>
+        <br>
+        <input type="submit" name="save" value="SAVE">
+    </form>
+</fieldset>
 
 <?php 
     if ($_POST["save"]) {

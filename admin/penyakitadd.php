@@ -1,9 +1,12 @@
-<form name="" method="post" action="" enctype="multipart/form-data">
-    <input type="text" name="code" placeholder="Kode Penyakit...">
-    <textarea name="penyakit" id="penyakit"></textarea>
-    <input type="text" name="pasien" placeholder="Jumlah Pasien...">
-    <input type="submit" name="save" value="SAVE">
-</form>
+<fieldset>
+    <form name="" method="post" action="" enctype="multipart/form-data">
+    <h1>TAMBAH PENYAKIT</h1>
+        <input type="text" name="code" placeholder="Kode Penyakit...">
+        <textarea name="penyakit" id="penyakit"></textarea>
+        <input type="text" name="pasien" placeholder="Jumlah Pasien...">
+        <input type="submit" name="save" value="SAVE">
+    </form>
+</fieldset>
 
 <?php 
     if ($_POST["save"]) {

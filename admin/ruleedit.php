@@ -4,25 +4,28 @@
     $rr = mysqli_fetch_array($sql_rule);
 ?>
 
-<form name="" method="post" action="" enctype="multipart/form-data">
-    <input type="text" name="code" value="<?php echo "$rr[kode_rule]"; ?>">
-    <textarea name="rule" id="rule"><?php echo "$rr[rule]"; ?></textarea>
+<fieldset>
+    <form name="" method="post" action="" enctype="multipart/form-data">
+    <h1>EDIT RULE</h1>
+        <input type="text" name="code" value="<?php echo "$rr[kode_rule]"; ?>">
+        <textarea name="rule" id="rule"><?php echo "$rr[rule]"; ?></textarea>
 
-    <!-- input id_penyakit -->
-    <?php 
-        include "connection.php";
-        $sql_penyakit = mysqli_query($conn, "SELECT * FROM penyakit ORDER BY kode_penyakit ASC");
-    ?>
-    <select name="id_penyakit">
-        <option value="">PENYAKIT</option>
-        <?php while ($rp = mysqli_fetch_array($sql_penyakit)) : ?>
-            <option value="<?php echo "$rp[id_penyakit]"; ?>"><?php echo "$rp[kode_penyakit] | $rp[penyakit]"; ?></option>
-        <?php endwhile; ?>
-    </select>
+        <!-- input id_penyakit -->
+        <?php 
+            include "connection.php";
+            $sql_penyakit = mysqli_query($conn, "SELECT * FROM penyakit ORDER BY kode_penyakit ASC");
+        ?>
+        <select name="id_penyakit">
+            <option value="">PENYAKIT</option>
+            <?php while ($rp = mysqli_fetch_array($sql_penyakit)) : ?>
+                <option value="<?php echo "$rp[id_penyakit]"; ?>"><?php echo "$rp[kode_penyakit] | $rp[penyakit]"; ?></option>
+            <?php endwhile; ?>
+        </select>
 
-    <input type="text" name="pasien" value="<?php echo "$rr[pasien]"; ?>">
-    <input type="submit" name="save" value="SAVE">
-</form>
+        <input type="text" name="pasien" value="<?php echo "$rr[pasien]"; ?>"><br>
+        <input type="submit" name="save" value="EDIT">
+    </form>
+</fieldset>
 
 <?php 
     if ($_POST["save"]) {

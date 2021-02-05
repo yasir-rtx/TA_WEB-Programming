@@ -27,6 +27,7 @@
                 
                 <div class="answerbox">
                     <?php $name = "CF".$i; ?>
+                    TIDAK
                         <input type="radio" id="0" class="form-radio" name="<?php echo "$name"; ?>" value="0.0">
                         <input type="radio" id="1" class="form-radio" name="<?php echo "$name"; ?>" value="0.1">
                         <input type="radio" id="2" class="form-radio" name="<?php echo "$name"; ?>" value="0.2">
@@ -38,6 +39,7 @@
                         <input type="radio" id="8" class="form-radio" name="<?php echo "$name"; ?>" value="0.8">
                         <input type="radio" id="9" class="form-radio" name="<?php echo "$name"; ?>" value="0.9">
                         <input type="radio" id="10" class="form-radio" name="<?php echo "$name"; ?>" value="1.0">
+                        YA
                     <?php // $j = $i +1; echo "CF".$j; ?> <!-- debug -->
                 </div>
             </div>

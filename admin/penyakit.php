@@ -1,5 +1,11 @@
 <?php include "connection.php"; ?>
-<a href="?p=penyakitadd">ADD</a>
+
+    <a href="?p=penyakitadd">
+        <div class="btn btn-add">
+            <p>TAMBAH DATA PENYAKIT</p>
+        </div>
+    </a>
+    
 <table>
     <tr>
         <th>NO</th>

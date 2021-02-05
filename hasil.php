@@ -97,17 +97,17 @@
 
             <tr>
                 <th>Demam Berdarah</th>
-                <td><?php echo "$hasil[CF_P01]"; ?></td>
+                <td><?php echo "$hasil[CF_P01]"; ?> %</td>
             </tr>
 
             <tr>
                 <th>Malaria</th>
-                <td><?php echo "$hasil[CF_P02]"; ?></td>
+                <td><?php echo "$hasil[CF_P02]"; ?> %</td>
             </tr>
 
             <tr>
                 <th>Chikungunya</th>
-                <td><?php echo "$hasil[CF_P03]"; ?></td>
+                <td><?php echo "$hasil[CF_P03]"; ?> %</td>
             </tr>
         </table>
     </div>

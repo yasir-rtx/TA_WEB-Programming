@@ -151,10 +151,6 @@ body {
 	}
 }
 
-.question {
-	background-color: #fff;
-}
-
 .dh1 {width: 8.33%;}
 .dh2 {width: 16.66%;}
 .dh3 {width: 24.99%;}
@@ -186,45 +182,32 @@ body {
 }
 
 .question {
-	color: rgb(124, 121, 247);
+	/* background-color:  rgb(27, 31, 44); */
+	/* border-radius: 5%; */
+	 /* warna bingkai */
+}
+
+.question {
+	color: #ffffff; /* warna tulisan */
 	/* background-color: lime; */
 	text-align: center;
 	width: 50%;
-	margin: 50px auto;
+	margin: 10px auto;
 	padding: 10px;
 }
 .questionbox {
-	background-color: rgb(137, 233, 148);
-	font-size: 40px;
+	background-color: rgb(27, 31, 44); /* warna bg petanyaan */
+	font-size: 20px;
 	line-height: 125%;
 	font-family: sans-serif;
 	padding: 20px;
 }
 
 .answerbox {
-	height: 50px;
-	line-height: 50px;
-	background-color: salmon;
+	height: 30px;
+	line-height: 30px;
+	background-color: rgba(51, 248, 25, .75); /* warna bg jawaban */
 	padding: 10px;
-}
-
-form .form-radio{display:none;}
-form .form-radio{padding-left:35px;}
-form .form-radio{
-    display:inline-block; 
-    width:25px; 
-    height:25px; 
-    /* background:#fff;  */
-	margin-right:5px; 
-	margin-top: 10px;
-    /* border:1px solid #ddd;  */
-	border-radius:50%; -moz-border-radius:50%;
-    transition:0.3s; -moz-transition:0.3s; -webkit-transition:0.3s; -khtml-transition:0.3s;}
-form .form-radio:checked + label::before{
-    background:#34A8BF; 
-    border:5px solid #fff; 
-    width:17px; 
-	height:17px;
 }
 
 .tombol {

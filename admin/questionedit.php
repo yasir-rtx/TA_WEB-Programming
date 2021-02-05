@@ -4,12 +4,15 @@
     $rq = mysqli_fetch_array($sql_question);
 ?>
 
-<form name="" method="post" action="" enctype="multipart/form-data">
-    <input type="hidden" name="id" value="<?php echo "$rq[id_quest]"; ?>">
-    <input type="text" name="code" value="<?php echo "$rq[kode_quest]"; ?>">
-    <textarea name="question" id="question"><?php echo "$rq[question]"; ?></textarea>
-    <input type="submit" name="edit" value="EDIT">
-</form>
+<fieldset>
+    <form name="" method="post" action="" enctype="multipart/form-data">
+    <h1>EDIT PERTANYAAN</h1>
+        <input type="hidden" name="id" value="<?php echo "$rq[id_quest]"; ?>">
+        <input type="text" name="code" value="<?php echo "$rq[kode_quest]"; ?>">
+        <textarea name="question" id="question"><?php echo "$rq[question]"; ?></textarea><br>
+        <input type="submit" name="edit" value="EDIT">
+    </form>
+</fieldset>
 
 <?php 
     if ($_POST["edit"]) {

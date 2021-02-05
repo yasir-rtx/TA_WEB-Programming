@@ -3,12 +3,16 @@
     $sql_gejala = mysqli_query($conn, "SELECT * FROM gejala WHERE id_gejala='$_GET[idg]'");
     $rg = mysqli_fetch_array($sql_gejala);
 ?>
-<form name="" method="post" action="" enctype="multipart/form-data">
-    <input type="hidden" name="id" value="<?php echo "$rg[id_gejala]"; ?>">
-    <input type="text" name="code" value="<?php echo "$rg[kode_gejala]"; ?>">
-    <textarea name="gejala" id="gejala"><?php echo "$rg[gejala]"; ?></textarea>
-    <input type="submit" name="edit" value="EDIT">
-</form>
+
+<fieldset>
+    <form name="" method="post" action="" enctype="multipart/form-data">
+        <h1>EDIT GEJALA</h1>
+        <input type="hidden" name="id" value="<?php echo "$rg[id_gejala]"; ?>">
+        <input type="text" name="code" value="<?php echo "$rg[kode_gejala]"; ?>">
+        <textarea name="gejala" id="gejala"><?php echo "$rg[gejala]"; ?></textarea>
+        <input type="submit" name="edit" value="EDIT">
+    </form>
+</fieldset>
 
 <?php 
     if ($_POST["edit"]) {

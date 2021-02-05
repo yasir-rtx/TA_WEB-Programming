@@ -1,5 +1,11 @@
 <?php include "connection.php"; ?>
-<a href="?p=ruleadd">ADD</a>
+
+    <a href="?p=ruleadd">
+        <div class="btn btn-add">
+            <p>TAMBAH DATA RULE</p>
+        </div>
+    </a>
+    
 <table>
     <tr>
         <th>NO</th>
@@ -30,7 +36,7 @@
             <td><?php echo "$rr[pasien]"; ?></td>
             <td>
                 <a href="?p=ruleedit&idr=<?php echo "$rr[id_rule]"; ?>">EDIT</a>
-                <a href="?p=ruledeleteidr=<?php echo "$rr[id_rule]"; ?>" onclick="return confirm('ARE YOU SURE YOU WANT TO DELETE THIS DATA?');">DELETE</a>
+                <a href="?p=ruledelete&idr=<?php echo "$rr[id_rule]"; ?>" onclick="return confirm('ARE YOU SURE YOU WANT TO DELETE THIS DATA?');">DELETE</a>
             </td>
         </tr>
     <?php $no++; ?>
