@@ -289,3 +289,7 @@ input[type="submit"] {
 	font-family: Cambria;
 	border-radius: 5px;
 }
+
+.hasil {
+	width: 70%;
+}

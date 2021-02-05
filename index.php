@@ -24,7 +24,7 @@
                         <a href="index.php"><b>M.E.S</b></a>
                         <a href="javascript:void(0);" class="icon" style="font-size:14px;" onClick="myFunction()">&#9776;</a>
                         <a href="index.php">Beranda</a>
-                        <a href="diagnosa.php">Diagnosa</a>
+                        <a href="diagnosa.php" onclick="return confirm('ANDA AKAN DIBERI PERTANYAAN TEANTANG GEJALA-GEJALA YANG MUNGKIN ANDA RASAKAN. KEMUDIA ANDA AKAN DIMINTA MENJAWAB DENGAN MEMBERI SKOR TERHADAP PERTANYAAN TERSEBUT. JIKA ANDA TIDAK MERASAKAN GEJALA YANG DITANYAKAN SAMA SEKALI SILAHKAN PILIH 0. DAN APABILA IYA, BERI SKOR ANTARA 1-10 TERHADAP GEJALA YANG ANDA RASAKAN. KLIK OK UNTUK JIKA SUDAH MENGERTI!');">Diagnosa</a>
                     </div>
                 </div>
                 <div class="dh6">

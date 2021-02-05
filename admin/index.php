@@ -39,7 +39,7 @@
                 <div class="dh6">
                     <div class="right">
                         <a>Selamat datang &nbsp;&nbsp;&nbsp;<b><?php echo "$admin[name]"; ?></b></a>
-                        <a href='riwayat.php?id=$result[id_user]'>Riwayat</a>
+                        <a href='?p=user'>USER LIST</a>
                         <a href='logout.php'>Logout</a>
                     </div>
                 </div>
@@ -96,7 +96,9 @@
                     include "ruledelete.php";
                 } elseif ($_GET["p"] == "user") {
                     include "user.php";
-                }else {
+                } elseif ($_GET["p"] == "history") {
+                    include "history.php";
+                } else {
                     include "home.php";
                 }
             ?>
